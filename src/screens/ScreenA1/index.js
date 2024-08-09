@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button, Text, View, TextInput, Image } from 'react-native';
+import { Button, Text, View, TextInput, Image,StyleSheet } from 'react-native';
 
 export default function ScreenA1({ navigation }) {
   const [name, setName] = React.useState('');

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Text, View, Image } from 'react-native';
+import { Button, Text, View, TextInput, Image,StyleSheet } from 'react-native';
 
 export default function ScreenC2() {
   return (

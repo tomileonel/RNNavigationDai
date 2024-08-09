@@ -2,41 +2,58 @@ import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { Ionicons } from '@expo/vector-icons';
-import { View, Text, StyleSheet } from 'react-native';
 
-// Pantalla Home
-function HomeScreen() {
+// Importa las pantallas desde la carpeta de screens
+import ScreenA1 from './src/screens/ScreenA1';
+import ScreenA2 from './src/screens/ScreenA2';
+import ScreenB1 from './src/screens/ScreenB1';
+import ScreenB2 from './src/screens/ScreenB2';
+import ScreenC1 from './src/screens/ScreenC1';
+import ScreenC2 from './src/screens/ScreenC2';
+import ScreenD1 from './src/screens/ScreenD1';
+import ScreenD2 from './src/screens/ScreenD2';
+
+// Crea los navegadores de pila para cada grupo de pantallas
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+
+const StackA = createNativeStackNavigator();
+const StackB = createNativeStackNavigator();
+const StackC = createNativeStackNavigator();
+const StackD = createNativeStackNavigator();
+
+function StackANavigator() {
     return (
-        <View style={styles.screen}>
-            <Text style={styles.text}>Welcome to Home Screen!</Text>
-        </View>
+        <StackA.Navigator initialRouteName='ScreenA1'>
+            <StackA.Screen name="ScreenA1" component={ScreenA1} />
+            <StackA.Screen name="ScreenA2" component={ScreenA2} />
+        </StackA.Navigator>
     );
 }
 
-// Pantalla Search
-function SearchScreen() {
+function StackBNavigator() {
     return (
-        <View style={styles.screen}>
-            <Text style={styles.text}>Search Screen</Text>
-        </View>
+        <StackB.Navigator initialRouteName='ScreenB1'>
+            <StackB.Screen name="ScreenB1" component={ScreenB1} />
+            <StackB.Screen name="ScreenB2" component={ScreenB2} />
+        </StackB.Navigator>
     );
 }
 
-// Pantalla Notifications
-function NotificationsScreen() {
+function StackCNavigator() {
     return (
-        <View style={styles.screen}>
-            <Text style={styles.text}>Notifications Screen</Text>
-        </View>
+        <StackC.Navigator initialRouteName='ScreenC1'>
+            <StackC.Screen name="ScreenC1" component={ScreenC1} />
+            <StackC.Screen name="ScreenC2" component={ScreenC2} />
+        </StackC.Navigator>
     );
 }
 
-// Pantalla Profile
-function ProfileScreen() {
+function StackDNavigator() {
     return (
-        <View style={styles.screen}>
-            <Text style={styles.text}>Profile Screen</Text>
-        </View>
+        <StackD.Navigator initialRouteName='ScreenD1'>
+            <StackD.Screen name="ScreenD1" component={ScreenD1} />
+            <StackD.Screen name="ScreenD2" component={ScreenD2} />
+        </StackD.Navigator>
     );
 }
 
@@ -58,6 +75,8 @@ function MyTabs() {
                         iconName = 'notifications-outline'; // Ícono para Notifications
                     } else if (route.name === 'Profile') {
                         iconName = 'person-outline'; // Ícono para Profile
+                    } else if (route.name === 'Settings') {
+                        iconName = 'settings-outline'; // Ícono para Settings
                     }
 
                     return <Ionicons name={iconName} size={size} color={color} />;
@@ -66,10 +85,10 @@ function MyTabs() {
                 tabBarInactiveTintColor: 'gray',
             })}
         >
-            <Tab.Screen name="Home" component={HomeScreen} />
-            <Tab.Screen name="Search" component={SearchScreen} />
-            <Tab.Screen name="Notifications" component={NotificationsScreen} />
-            <Tab.Screen name="Profile" component={ProfileScreen} />
+            <Tab.Screen name="Home" component={StackANavigator} />
+            <Tab.Screen name="Search" component={StackBNavigator} />
+            <Tab.Screen name="Notifications" component={StackCNavigator} />
+            <Tab.Screen name="Settings" component={StackDNavigator} />
         </Tab.Navigator>
     );
 }
@@ -82,17 +101,3 @@ export default function App() {
         </NavigationContainer>
     );
 }
-
-// Estilos
-const styles = StyleSheet.create({
-    screen: {
-        flex: 1,
-        justifyContent: 'center',
-        alignItems: 'center',
-        backgroundColor: '#f8f8ff',
-    },
-    text: {
-        fontSize: 20,
-        color: '#333',
-    },
-});

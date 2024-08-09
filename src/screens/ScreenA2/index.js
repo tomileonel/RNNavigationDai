@@ -1,5 +1,5 @@
 import React from 'react';
-import { Text, View, Image } from 'react-native';
+import { Button, Text, View, TextInput, Image,StyleSheet } from 'react-native';
 
 export default function ScreenA2({ route }) {
   const { name, phone } = route.params;

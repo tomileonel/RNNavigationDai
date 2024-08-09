@@ -1,13 +1,13 @@
 import React from 'react';
-import { Button, Text, View, Image } from 'react-native';
+import { Button, Text, View, TextInput, Image,StyleSheet } from 'react-native';
 
 export default function ScreenD1({ navigation }) {
   return (
     <View style={styles.container}>
-      <Text style={styles.text}>Screen D1</Text>
+      <Text style={styles.text}>Screen D2</Text>
       <Button
-        title="Ir a D2"
-        onPress={() => navigation.navigate('ScreenD2')}
+        title="Ir a D1"
+        onPress={() => navigation.navigate('ScreenD1')}
       />
     </View>
   );
