@@ -1,6 +1,5 @@
 import React from 'react';
 import { Button, Text, View, TextInput, Image } from 'react-native';
-import styles from '../styles/screenA1Styles';
 
 export default function ScreenA1({ navigation }) {
   const [name, setName] = React.useState('');

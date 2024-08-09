@@ -1,6 +1,5 @@
 import React from 'react';
 import { Text, View, Image } from 'react-native';
-import styles from '../styles/screenA2Styles';
 
 export default function ScreenA2({ route }) {
   const { name, phone } = route.params;

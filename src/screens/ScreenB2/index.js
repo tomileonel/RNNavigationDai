@@ -1,6 +1,5 @@
 import React from 'react';
 import { Text, View, Image } from 'react-native';
-import styles from '../styles/screenB2Styles';
 
 export default function ScreenB2() {
   return (

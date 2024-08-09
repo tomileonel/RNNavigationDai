@@ -1,6 +1,5 @@
 import React from 'react';
 import { Button, Text, View, Image } from 'react-native';
-import styles from '../styles/screenC1Styles';
 
 export default function ScreenC1({ navigation }) {
   return (
