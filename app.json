@@ -3,6 +3,7 @@
     "name": "rnnavigationdai",
     "slug": "rnnavigationdai",
     "version": "1.0.0",
+    "host": "tunnel",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
